@@ -1,0 +1,8 @@
+configs.json
+node_modules
+update.bat
+updaterOut.log
+.ps1
+git-push.bat
+out.log
+.log
