@@ -1,3 +1,21 @@
 {
-    "id_empresa": 1
+    "id_empresa": 1,
+    "localhost": "localhost",
+    "horarios": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18
+    ],
+    "appinfo": {
+        "repository": "exe-restore-mor",
+        "exe_name": "Restore-MOR",
+        "service_name": "RESTMOR"
+    }
 }
