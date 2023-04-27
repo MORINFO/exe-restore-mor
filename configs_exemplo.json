@@ -1,6 +1,6 @@
 {
     "id_empresa": 1,
-    "localhost": "localhost",
+    "bancoLocal": "bancoLocal",
     "horarios": [
         8,
         9,
