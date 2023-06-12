@@ -1,18 +1,5 @@
 {
     "id_empresa": 1,
-    "bancoLocal": "bancoLocal",
-    "horarios": [
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        16,
-        17,
-        18
-    ],
     "appinfo": {
         "repository": "exe-restore-mor",
         "exe_name": "Restore-MOR",

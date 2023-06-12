@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Restore Mysql Mor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <span class="title">Restore Biomedical BI</span>
+
+        <form class="items" onsubmit="salvaConfigs()">
+
+            <!-- <img src="icon.png" id="img" class="img"> -->
+
+            <div id="menu" class="menu">
+                <div id="buttons" class="buttons">
+                    <div id="horarios" class="horarios"> </div>
+                </div>
+     
+                <div id="buttons" class="buttons">
+                    <div id="emails" class="emails"></div>
+                </div>
+            </div>
+            <div class="buttonsAdicionar">
+                <button type="button" onclick="geraInputHora()" class="button">Adicionar hora</button>
+                <button type="button" onclick="geraInputEmail()" class="button">Adicionar Email</button>
+            </div>
+            <button type="submit" class="buttonSalvar">Salvar</button>
+
+        </form>
+    </div>
+    <div id="bttInferior" class="bttInferior">
+
+    </div>
+    <span class="copyright">Mor Info ©</span>
+
+    <div id="errorMax" class="toastOff">
+        <span id=messageError>limite maximo atingido</span>
+    </div>
+    
+</body>
+
+<script src="index.js" defer></script>
+
+</html>
