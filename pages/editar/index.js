@@ -4,10 +4,13 @@ async function start() {
 
     try {
         const buscaConfigs = await axios.get('http://127.0.0.1:3435/consulta-configs')
-        
+
+        const loop = document.getElementById(`loop`)
+
         if (buscaConfigs.data) {
             configs = buscaConfigs.data
-        }else{
+            loop.className = 'loopOff'
+        } else {
             alert('Erro ao consultar informações')
             window.close()
         }
@@ -65,6 +68,8 @@ async function start() {
 
             emails.appendChild(novaDivEmail);
         })
+
+        
 
     } catch (error) {
         alert('Erro ao consultar informações')

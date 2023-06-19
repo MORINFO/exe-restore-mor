@@ -1,16 +1,23 @@
 #!/usr/bin/perl
 # -*- cperl -*-
 #
-# Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2007, 2017, Oracle and/or its affiliates. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; version 2 of the License.
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# GNU General Public License, version 2.0, for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
@@ -27,7 +34,7 @@
 #  All unrecognized arguments to this script are passed to mysqld.
 #
 #  NOTE: This script will only be used on Windows until solved how to
-#        handle ws2_32  and other strings inserted that might contain
+#        handle ws2_32 crypt32  and other strings inserted that might contain
 #        several arguments, possibly with spaces in them.
 #
 #  NOTE: This script was deliberately written to be as close to the shell
@@ -52,7 +59,7 @@ my $cwd = cwd();
 my $basedir;
 
 my $socket  = '/tmp/mysql.sock';
-my $version = '5.6.32';
+my $version = '5.6.51';
 
 sub which
 {
@@ -196,15 +203,15 @@ else
 
 my $flags;
 $flags->{libs} =
-  [@ldflags,@lib_opts,'','ws2_32 Secur32 ','',''];
+  [@ldflags,@lib_opts,'','ws2_32 crypt32 Secur32 ','',''];
 $flags->{libs_r} =
-  [@ldflags,@lib_r_opts,'','ws2_32 ',''];
+  [@ldflags,@lib_r_opts,'','ws2_32 crypt32 ',''];
 $flags->{embedded_libs} =
-  [@ldflags,@lib_e_opts,'','','ws2_32 ','',''];
+  [@ldflags,@lib_e_opts,'','','ws2_32 crypt32 ','',''];
 
 $flags->{include} = ["-I$pkgincludedir"];
-$flags->{cflags}  = [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
-$flags->{cxxflags}= [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
+$flags->{cflags}  = [@{$flags->{include}},split(" ",'/MD /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
+$flags->{cxxflags}= [@{$flags->{include}},split(" ",'/MD /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
 
 # ----------------------------------------------------------------------
 # Remove some options that a client doesn't have to care about

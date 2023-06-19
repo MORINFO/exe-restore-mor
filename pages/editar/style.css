@@ -26,6 +26,17 @@ body {
     font-size: -webkit-xxx-large;
 }
 
+.loop{
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 5px;
+}
+
+.loopOff{
+    position: absolute;
+    visibility: hidden;
+}
+
 .items {
 
     display: flex;
