@@ -73,7 +73,6 @@ async function start() {
 
     } catch (error) {
         alert('Erro ao consultar informações')
-        window.close()
     }
 
 }
